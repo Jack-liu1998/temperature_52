@@ -1,0 +1,76 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+E:\电路\温度计终版\temperature_52_LCD\project\LCD1602.uvproj
+Project File Date:  01/18/2018
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ad-read.c...
+compiling warning.c...
+compiling main.c...
+linking...
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _DELAY
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _OUT
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _LCD_WCMD
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _LCD_WDAT
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  LCD_INIT
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _LCD_POS
+    MODULE:  .\main.obj (MAIN)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  LCD_INIT
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 037DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0384H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _LCD_WCMD
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0389H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _LCD_POS
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 038EH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _LCD_WDAT
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 039DH
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 03A4H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _OUT
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0402H
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _DELAY
+    MODULE:  .\main.obj (MAIN)
+    ADDRESS: 0421H
+Program Size: data=20.0 xdata=0 code=1218
+creating hex file from "LCD1602"...
+"LCD1602" - 0 Error(s), 14 Warning(s).
+Build target 'Target 1'
+compiling ad-read.c...
+compiling warning.c...
+compiling main.c...
+compiling LCD1602.c...
+linking...
+Program Size: data=33.1 xdata=0 code=1620
+creating hex file from "LCD1602"...
+"LCD1602" - 0 Error(s), 0 Warning(s).

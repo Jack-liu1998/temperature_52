@@ -1,0 +1,139 @@
+C51 COMPILER V9.00   LCD1602                                                               01/18/2018 10:40:18 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE LCD1602
+OBJECT MODULE PLACED IN .\LCD1602.obj
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE ..\user\LCD1602.c BROWSE DEBUG OBJECTEXTEND PRINT(.\LCD1602.lst) OBJECT(.\
+                    -LCD1602.obj)
+
+line level    source
+
+   1          #include "LCD1602.h"
+   2          
+   3          
+   4          void delay (int m)
+   5          {
+   6   1       unsigned char i,j;
+   7   1       for (i=0;i<m;i++)
+   8   1       for (j=0;j<253;j++);
+   9   1      }
+  10          
+  11           BOOL lcd_bz()
+  12          {
+  13   1        BOOL result;
+  14   1        rs=0;           // 读忙信号
+  15   1        rw=1;
+  16   1        ep=1;
+  17   1        _nop_();
+  18   1        _nop_();
+  19   1        _nop_();
+  20   1        _nop_();
+  21   1        result = (BOOL)(P2&0x80);
+  22   1        ep=0;
+  23   1        return result;
+  24   1      }
+  25          
+  26          void lcd_wcmd (BYTE cmd)
+  27          {
+  28   1        while (lcd_bz());
+  29   1        rs=0;
+  30   1        rw=0;
+  31   1        ep=0;
+  32   1        _nop_();
+  33   1        _nop_();
+  34   1        P2=cmd ;
+  35   1        _nop_();
+  36   1        _nop_();
+  37   1        _nop_();
+  38   1        _nop_();
+  39   1        ep=1;
+  40   1        _nop_();
+  41   1        _nop_();
+  42   1        _nop_();
+  43   1        _nop_();
+  44   1        ep=0;
+  45   1      }
+  46          
+  47          void lcd_pos (BYTE pos)
+  48          {
+  49   1        lcd_wcmd (pos|0x80);
+  50   1      }
+  51          
+  52          void lcd_wdat (BYTE dat)
+  53          {
+  54   1         while (lcd_bz());
+C51 COMPILER V9.00   LCD1602                                                               01/18/2018 10:40:18 PAGE 2   
+
+  55   1        rs=1;
+  56   1        rw=0;
+  57   1        ep=0;
+  58   1        _nop_();
+  59   1        _nop_();
+  60   1        P2=dat ;
+  61   1        _nop_();
+  62   1        _nop_();
+  63   1        _nop_();
+  64   1        _nop_();
+  65   1        ep=1;
+  66   1        _nop_();
+  67   1        _nop_();
+  68   1        _nop_();
+  69   1        _nop_();
+  70   1        ep=0;
+  71   1      }
+  72          
+  73          void lcd_init ()
+  74          {
+  75   1        lcd_wcmd (0x38);
+  76   1        delay (1);
+  77   1        lcd_wcmd (0x0c);
+  78   1        delay (1);
+  79   1        lcd_wcmd (0x06);
+  80   1        delay (1);
+  81   1        lcd_wcmd (0x01);
+  82   1        delay (1);
+  83   1      }
+  84          
+  85          
+  86           void Out(int num)
+  87          {
+  88   1      int i;
+  89   1              char number[13];
+  90   1              number[12]='\0';//xx.x Celsius
+  91   1              number[11]='s';
+  92   1              number[10]='u';
+  93   1              number[9]='i';
+  94   1              number[8]='s';
+  95   1              number[7]='l';
+  96   1              number[6]='e';
+  97   1              number[5]='C';
+  98   1              number[4]=' ';
+  99   1              number[3]=num%10+'0';
+ 100   1              number[2]='.';
+ 101   1              number[1]=(num/10)%10+'0';
+ 102   1              number[0]=num/100+'0';
+ 103   1              lcd_pos (0x40);           //第二行输出温度具体数据
+ 104   1        i=0;
+ 105   1        while (number[i]!='\0')//输出
+ 106   1         {
+ 107   2           lcd_wdat (number[i]);
+ 108   2               delay(1);
+ 109   2           i++;       
+ 110   2         } 
+ 111   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    263    ----
+   CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.00   LCD1602                                                               01/18/2018 10:40:18 PAGE 3   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      13
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
