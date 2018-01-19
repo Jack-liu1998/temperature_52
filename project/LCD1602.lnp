@@ -1,6 +1,6 @@
 ".\ad-read.obj",
-".\warning.obj",
+".\LCD1602.obj",
 ".\main.obj",
-".\LCD1602.obj" 
+".\warning.obj" 
 TO "LCD1602" 
 RAMSIZE(256) 

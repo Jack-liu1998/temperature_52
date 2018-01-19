@@ -349,22 +349,22 @@
             <File>
               <FileName>ad-read.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\user\ad-read.c</FilePath>
-            </File>
-            <File>
-              <FileName>warning.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\user\warning.c</FilePath>
-            </File>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\user\main.c</FilePath>
+              <FilePath>..\user_bsp\ad-read.c</FilePath>
             </File>
             <File>
               <FileName>LCD1602.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\user\LCD1602.c</FilePath>
+              <FilePath>..\user_bsp\LCD1602.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user_bsp\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>warning.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user_bsp\warning.c</FilePath>
             </File>
           </Files>
         </Group>

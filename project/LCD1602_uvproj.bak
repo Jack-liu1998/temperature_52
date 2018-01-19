@@ -361,6 +361,11 @@
               <FileType>1</FileType>
               <FilePath>..\user\main.c</FilePath>
             </File>
+            <File>
+              <FileName>LCD1602.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\LCD1602.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
