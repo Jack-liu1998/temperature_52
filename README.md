@@ -12,5 +12,4 @@ a thermometer based on STC89c52 MCU using RTD-PT100 thermistor
 要求分析：<br>
 1.数字式温度计的主要功能要求是对被测温度实现测量功能，具体思路是将温度变化转变为其他易测模拟量的变化，我们这里选用较为稳定易于放大和测量的电压模拟量，将温度变换转变电压差。<br>
 2.温度计的性能指标要求误差在1℃以内，同时显示精度为0.1℃。考虑到侧温范围为0~80℃，相比1℃跨度较大，因此容易出现非线性的误差，所以要对电压和温度的对应关系进行一定处理，我们采用线性拟合的方法。<br>
-
-
+[具体详见word文档](https://github.com/Geek-wireless/temperature_52/raw/master/document/基于STC89C52的数字式温度计.docx) 
